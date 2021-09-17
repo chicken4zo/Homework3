@@ -125,7 +125,7 @@ public class KoreaMemberDao {
                 kdto.setPwd(rs.getString("pwd"));
                 kdto.setName(rs.getString("name"));
                 kdto.setAge(rs.getInt("age"));
-                kdto.setGender(rs.getNString("gender"));
+                kdto.setGender(rs.getString("gender"));
                 kdto.setEmail(rs.getString("email"));
 
             }
