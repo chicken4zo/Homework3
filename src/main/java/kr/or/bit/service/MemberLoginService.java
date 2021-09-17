@@ -28,20 +28,17 @@ public class MemberLoginService implements Action {
 			KoreaMemberDao dao = new KoreaMemberDao();
 			dto = dao.loginId(id);
 			System.out.println(dto);
-
-		
-				System.out.println(dto);
+//				System.out.println(dto);
 			if(dto != null) {
 				if (pwd.equals(dto.getPwd())) { // ID 존재 , PWD(0)
 					// 정상회원
 					// Top.jsp 정보 로그인 상태 ...
 					session.setAttribute("userid", id);
 					// 이동처리
-					forward.setPath("Main.do");
+
 				} else {
 					// ID 존재 , PWD(x)
 //					System.out.println("타니..?");
-					forward.setPath("Main.do");
 				}
 			}
 
@@ -49,6 +46,7 @@ public class MemberLoginService implements Action {
 			System.out.println(e.getMessage());
 		}
 		forward.setRedirect(false);
+		forward.setPath("Main.do");
 		return forward;
 	}
 }
