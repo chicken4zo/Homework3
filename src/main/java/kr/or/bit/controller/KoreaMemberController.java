@@ -28,19 +28,19 @@ public class KoreaMemberController extends HttpServlet {
             forward = action.execute(request, response);
             System.out.println("KoreaMemberJoin Start");
 
-        }else if(url_Command.equals("/MemberDelete.do")){
+        }else if(url_Command.equals("/KoreaMemberDelete.do")){
 //UI+로직
             action = new KoreaMemberDeleteService();
             forward = action.execute(request, response);
             System.out.println("MemoDeleteService 실행");
 
-        }else if(url_Command.equals("/MemberDetail.do")) { //상세보기
+        }else if(url_Command.equals("/KoreaMemberDetail.do")) { //상세보기
             //UI+로직
             action = new KoreaMemberDetailService();
             forward = action.execute(request, response);
             System.out.println("MemberDetailService 실행");
 
-        }else if(url_Command.equals("/EditMember.do")){
+        }else if(url_Command.equals("/KoreaMemberEdit.do")){
             action = new EditMemberService();
             forward = action.execute(request,response);
         } else if(url_Command.equals("/KoreaMemberList.do")) { //목록보기
@@ -52,7 +52,7 @@ public class KoreaMemberController extends HttpServlet {
             action = new KoreaMemberSearchService();
             forward = action.execute(request, response);
             System.out.println("MemberSearchService 실행");
-        } else if(url_Command.equals("/Login.do")) {
+        } else if(url_Command.equals("/KoreaMemberLogin.do")) {
             action = new MemberLoginService();
             forward = action.execute(request, response);
         } else if(url_Command.equals("/Main.do")) {

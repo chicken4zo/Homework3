@@ -14,13 +14,9 @@ public class EditMemberService implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
         String name = request.getParameter("name");
-        int age = Integer.parseInt(request.getParameter("age"));
-        String email = request.getParameter("email");
-        String gender = request.getParameter("gender");
+        ActionForward forward = null;
 
-        ActionForward forward = new ActionForward();
-
-        if(name == null){
+        if (name == null) {
             KoreaMemberDao dao = new KoreaMemberDao();
             KoreaMemberDto kdto = dao.detailMember(id);
 
@@ -30,6 +26,9 @@ public class EditMemberService implements Action {
             forward.setRedirect(false);
             forward.setPath("/WEB-INF/views/MemberEdit.jsp");
         } else {
+            int age = Integer.parseInt(request.getParameter("age"));
+            String email = request.getParameter("email");
+            String gender = request.getParameter("gender");
             KoreaMemberDto kdto = new KoreaMemberDto();
             kdto.setName(name);
             kdto.setAge(age);
@@ -45,10 +44,10 @@ public class EditMemberService implements Action {
 
             if(result>0){
                 msg="수정성공";
-                url="MemberList.do";
+                url="KoreaMemberList.do";
             }else {
                 msg="수정실패";
-                url="MemberList.do";
+                url="KoreaMemberList.do";
             }
 
             request.setAttribute("board_msg",msg);
@@ -56,9 +55,9 @@ public class EditMemberService implements Action {
 
             forward = new ActionForward();
             forward.setRedirect(false);
-            forward.setPath("Main.do");
-
+            forward.setPath("/WEB-INF/views/redirect.jsp");
         }
+
         return forward;
     }
 }

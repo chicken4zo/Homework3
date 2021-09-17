@@ -40,7 +40,6 @@ public class KoreaMemberDao {
 
     public KoreaMemberDto loginId(String id) {
         Connection conn =null;//추가
-        String loginId = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         KoreaMemberDto dto = null;

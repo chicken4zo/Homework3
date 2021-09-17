@@ -35,7 +35,7 @@ public class KoreaMemberDeleteService implements Action {
 		
 		    ActionForward forward = new ActionForward();
 		    forward.setRedirect(false);
-		    forward.setPath("/WEB-INF/vies/redirect.jsp");
+		    forward.setPath("/WEB-INF/views/redirect.jsp");
 		    
 		return forward;
 	}
