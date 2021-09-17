@@ -41,9 +41,3 @@ public class KoreaMemberDeleteService implements Action {
 	}
 
 }
-
-
-
-
-
-
