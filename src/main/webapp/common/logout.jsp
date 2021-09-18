@@ -3,5 +3,5 @@
 <%--controller--%>
 <%
 	session.invalidate();
-	response.sendRedirect("Login.jsp");
+	response.sendRedirect("KoreaMemberLoginForm.do");
 %>    
